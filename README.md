@@ -1,2 +1,2 @@
 # TodoApplication
-todo application in spring boot
+Spring boot application , jpa, mock test, db connection
