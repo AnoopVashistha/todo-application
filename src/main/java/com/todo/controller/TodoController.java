@@ -4,6 +4,7 @@
 package com.todo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,9 +30,9 @@ public class TodoController {
 		return "task created";
 	}
 
-	@RequestMapping(value = "api/v1/todoApps/list", method = RequestMethod.GET)
-	public TodoDTO retrieveTodoList() {
-		return todoService.retrieveTodoList();
+	@RequestMapping(value = "api/v1/todoApps/{taskId}", method = RequestMethod.GET)
+	public TodoDTO retrieveTodoList(@PathVariable Integer taskId) {
+		return todoService.retireveTodoListById( taskId );
 	}
 
 }
